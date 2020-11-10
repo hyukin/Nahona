@@ -8,10 +8,12 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,22 +21,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_start);
 
-        TextInputLayout passwordLayout = findViewById(R.id.input_password);
+        ImageView load = (ImageView)findViewById(R.id.load);
+        Glide.with(this).load(R.raw.main).into(load);
 
-        passwordLayout.setPasswordVisibilityToggleEnabled(true);
-
-        Button button = (Button)findViewById(R.id.login_button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), homeActivity.class);
-                startActivityForResult(intent,1001);
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(), loginActivity.class);
+                startActivity(intent);
+                finish();
             }
-        });
-
+        },3500);
     }
 
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }
