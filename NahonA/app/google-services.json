@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "906244552877",
+    "firebase_url": "https://nahona-db722.firebaseio.com",
+    "project_id": "nahona-db722",
+    "storage_bucket": "nahona-db722.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906244552877:android:ccd3e463ba2dd6b8eaee24",
+        "android_client_info": {
+          "package_name": "org.techtwn.nahona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906244552877-45iiojgd1e29cak1mjvb9jjd5m7m0g95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVx8wFIFC8Mcd83CwalQm7TVnNLSrIuTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906244552877-45iiojgd1e29cak1mjvb9jjd5m7m0g95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
