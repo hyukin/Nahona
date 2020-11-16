@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".loginActivity"></activity>
-        <activity android:name=".shoppingActivity"></activity>
+        <activity android:name=".shoppingActivity2"></activity>
         <activity android:name=".homeActivity" />
+        <activity
+            android:name=".ShoppingActivity"
+            android:label="쇼핑"></activity>
+        <activity
+            android:name=".Picture"
+            android:label="상세정보"></activity>
+        <activity android:name=".Sell"></activity>
         <activity android:name=".MainActivity">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

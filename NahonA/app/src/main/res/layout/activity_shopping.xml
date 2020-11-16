@@ -1,135 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_color"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/buyvPager"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="90dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="#ffffff"
-        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="409dp"
-            android:layout_height="70dp"
-            android:orientation="horizontal">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:elevation="1dp"
+                android:id="@+id/toolbar">
 
-            <ImageView
-                android:id="@+id/quick_home"
-                android:layout_width="276dp"
-                android:layout_height="70dp"
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+                    android:text="타이틀"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="1dp"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="#000000"
                 android:layout_weight="1"
-                android:clickable="true"
-                android:background="?attr/selectableItemBackground"
-                app:srcCompat="@drawable/home" />
+                app:tabTextColor="#FFFFFF" />
 
-            <ImageView
-                android:id="@+id/quick_shopping"
-                android:layout_width="276dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:background="?attr/selectableItemBackground"
-                app:srcCompat="@drawable/shoping" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-            <ImageView
-                android:id="@+id/quick_chat"
-                android:layout_width="276dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:background="?attr/selectableItemBackground"
-                app:srcCompat="@drawable/chat" />
-
-            <ImageView
-                android:id="@+id/quick_board"
-                android:layout_width="276dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:background="?attr/selectableItemBackground"
-                app:srcCompat="@drawable/bulletin" />
-
-            <ImageView
-                android:id="@+id/quick_setting"
-                android:layout_width="276dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:background="?attr/selectableItemBackground"
-                app:srcCompat="@drawable/setting" />
-        </LinearLayout>
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/container">
 
-            <TextView
-                android:id="@+id/sub_q_home"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:font="@font/hanna11"
-                android:gravity="center"
-                android:text="홈" />
-
-            <TextView
-                android:id="@+id/sub_q_shopping"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:font="@font/hanna11"
-                android:gravity="center"
-                android:text="쇼핑" />
-
-            <TextView
-                android:id="@+id/sub_q_chat"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:font="@font/hanna11"
-                android:gravity="center"
-                android:text="채팅" />
-
-            <TextView
-                android:id="@+id/sub_q_board"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:font="@font/hanna11"
-                android:gravity="center"
-                android:text="게시판" />
-
-            <TextView
-                android:id="@+id/sub_q_setting"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:font="@font/hanna11"
-                android:gravity="center"
-                android:text="설정" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

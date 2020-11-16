@@ -15,7 +15,7 @@ public class nbuyActivity extends Fragment {
     TextView tv;
     EditText et;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        tv =
+        //tv =
         return inflater.inflate(R.layout.activity_nbuy,container,false);
     }
 

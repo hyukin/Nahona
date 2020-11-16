@@ -11,12 +11,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-public class shoppingActivity extends AppCompatActivity {
+public class shoppingActivity2 extends AppCompatActivity {
     ViewPager pager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping);
+        setContentView(R.layout.activity_shopping2);
 
         pager = findViewById(R.id.buyvPager);
         pager.setOffscreenPageLimit(3);
