@@ -1,4 +1,4 @@
-package org.techtwn.nahona;
+package shopping;
 
 import android.content.Context;
 
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import org.techtwn.nahona.R;
 
 import java.util.ArrayList;
 

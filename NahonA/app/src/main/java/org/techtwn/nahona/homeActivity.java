@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import shopping.ShoppingActivity;
+
 public class homeActivity extends AppCompatActivity {
     ViewPager pager;
     @Override

@@ -1,4 +1,4 @@
-package org.techtwn.nahona;
+package shopping;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +13,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.google.android.material.tabs.TabLayout;
 
+import org.techtwn.nahona.Picture;
+import org.techtwn.nahona.R;
+
 public class ShoppingActivity extends AppCompatActivity {
 
     private FragmentPagerAdapter fragmentPagerAdapter;
     Toolbar toolbar;
 
-    Fragment1 fragment1;
+    Shopping1Activity fragment1;
     Fragment2 fragment2;
 
 
@@ -28,13 +31,11 @@ public class ShoppingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shopping);
 
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
 
-        fragment1 = new Fragment1();
+        fragment1 = new Shopping1Activity();
         fragment2 = new Fragment2();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
