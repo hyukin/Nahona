@@ -1,4 +1,4 @@
-package org.techtwn.nahona;
+package shopping;
 
 import android.os.Bundle;
 
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import org.techtwn.nahona.R;
 
 public class nbuyActivity extends Fragment {
     TextView tv;

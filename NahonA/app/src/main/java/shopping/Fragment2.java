@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import org.techtwn.nahona.R;
-import org.techtwn.nahona.nbuyActivity;
 
 
 public class Fragment2 extends Fragment {
