@@ -100,7 +100,7 @@ public class registerActivity extends AppCompatActivity {
                             } else {
                                 mDialog.dismiss();
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(registerActivity.this, "씨발", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(registerActivity.this, "회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                                 return;  //해당 메소드 진행을 멈추고 빠져나감.
 
                             }
