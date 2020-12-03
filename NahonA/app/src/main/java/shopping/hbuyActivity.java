@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,9 +24,10 @@ import java.util.ArrayList;
 
 public class hbuyActivity extends Fragment {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private upload_Adapter adapter;
+
     private  RecyclerView.LayoutManager layoutManager;
-    private ArrayList<upload> arrayList;
+    public ArrayList<upload> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
@@ -61,6 +63,18 @@ public class hbuyActivity extends Fragment {
         });
         adapter = new upload_Adapter(arrayList,getContext());
         recyclerView.setAdapter(adapter);//리사이클러뷰에 어댑터 연결
+        adapter.setOnItemClickListener(new upload_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(upload_Adapter.CustomViewHolder holder, View view, int position) {
+                upload item = adapter.getItem(position);
+                Toast.makeText(getContext(),"현재 타겟값"+item.getCur(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"현재 목표값"+item.getTar(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
         return view;
+
     }
 }

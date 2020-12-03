@@ -19,9 +19,13 @@ import java.util.ArrayList;
 public class upload_Adapter extends RecyclerView.Adapter <upload_Adapter.CustomViewHolder> {
     private ArrayList<upload> arrayList;
     private Context context;
+    OnItemClickListener listener;
     public upload_Adapter(ArrayList<upload> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
+    }
+    public static interface OnItemClickListener {
+        void onItemClick(CustomViewHolder holder, View view, int position);
     }
 
     @NonNull
@@ -40,11 +44,22 @@ public class upload_Adapter extends RecyclerView.Adapter <upload_Adapter.CustomV
         holder.gs_tar.setText(String.valueOf(arrayList.get(position).getTar()));
         holder.gs_price.setText(String.valueOf(arrayList.get(position).getPrice()));
         holder.gs_explain.setText(arrayList.get(position).getExplain());
+        holder.setOnItemClickListener(listener);
     }
 
     @Override
     public int getItemCount() {
         return (arrayList != null ? arrayList.size():0);
+    }
+    public upload getItem(int position) {
+        return arrayList.get(position);
+    }
+
+    public void test() {
+
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -54,6 +69,7 @@ public class upload_Adapter extends RecyclerView.Adapter <upload_Adapter.CustomV
         TextView gs_tar;
         TextView gs_price;
         TextView gs_explain;
+        OnItemClickListener listener;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.gs_image =itemView.findViewById(R.id.gs_image);
@@ -62,6 +78,19 @@ public class upload_Adapter extends RecyclerView.Adapter <upload_Adapter.CustomV
             this.gs_tar = itemView.findViewById(R.id.tar_human);
             this.gs_price = itemView.findViewById(R.id.gs_price);
             this.gs_explain = itemView.findViewById(R.id.gs_explain);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if(listener != null){
+                        listener.onItemClick(CustomViewHolder.this, v,position );
+                    }
+                }
+            });
+
+        }
+        public void setOnItemClickListener(OnItemClickListener listener){
+            this.listener = listener;
         }
     }
 }
