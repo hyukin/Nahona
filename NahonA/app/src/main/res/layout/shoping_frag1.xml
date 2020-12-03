@@ -163,6 +163,7 @@
                     app:srcCompat="@drawable/house_"
                     tools:srcCompat="@drawable/house_" />
 
+
                 <LinearLayout
                     android:layout_width="96dp"
                     android:layout_height="match_parent"
